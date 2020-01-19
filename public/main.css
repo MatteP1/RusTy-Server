@@ -1,0 +1,98 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    background-color: #202020;
+    color: #8800ff;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.grid-container {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "wol games log";
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+#welcomemsg {
+    grid-area: header;
+}
+#wol {
+    grid-area: wol;
+}
+#games {
+    grid-area: games;
+}
+#log { 
+    grid-area: log;      
+}
+
+.grid-container > .top-card {
+    border: 1px solid rgb(255, 0, 0);
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    padding: 0 20px 20px;
+}
+
+button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .grid-container { 
+      grid-template-areas: 
+        "wol"
+        "games"
+        "log";
+      grid-template-rows: auto auto auto;  
+      grid-template-columns: 1fr;
+   }
+}
+
+#welcomemsg {
+    text-align: center;
+}
+
+hr {
+    border: 0.5px solid red;
+}
+
+#wol-cards {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#wol-cards > hr {
+    border: 0.5px solid red;
+}
+
+#wol-cards > li {
+    /* fill */
+}
+
+.status {
+    vertical-align: middle;
+}
+
+.circle-status {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}

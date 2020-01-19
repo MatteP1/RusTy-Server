@@ -1,0 +1,23 @@
+{
+  "name": "rusty-server",
+  "version": "1.0.0",
+  "description": "RusTy's home server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rusty",
+    "home",
+    "server"
+  ],
+  "author": "Mathias \"RusTy\" Pedersen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
