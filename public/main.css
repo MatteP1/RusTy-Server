@@ -77,22 +77,31 @@ hr {
     padding-right: 5%;
 }
 
-#wol-cards > hr {
-    border: 0.5px solid red;
-}
-
 #wol-cards > li {
-    /* fill */
+    border: 1px solid rgba(255, 0, 0, 0.103);
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    margin-top: 24px;
+    background-color: #303030;
 }
 
 .status {
     vertical-align: middle;
+    margin-bottom: 16px;
 }
 
 .circle-status {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     background-color: red;
     border-radius: 50%;
     display: inline-block;
+    margin-right: 8px;
+}
+
+a {
+    color: #8800ff;
+    text-decoration: none;
 }

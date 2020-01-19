@@ -5,7 +5,7 @@ $.get('/api/wol', function(data, status) {
         var toAppend = makeCard(device.name, device.status);
         deviceHTMLList[i] = toAppend;
     });
-    var toAdd = deviceHTMLList.join('<hr>');
+    var toAdd = deviceHTMLList.join("");
     $('#wol-cards').append(toAdd);
 });
 
@@ -14,7 +14,7 @@ function makeCard(deviceName, deviceStatus) {
     return  '<li>' +
                 '<h3>' + deviceName + '</h3>' +
                     '<div class="status">' +
-                        '<span class="circle-status"></span>' + deviceStatus +
+                        '<span class="circle-status"></span> ' + deviceStatus +
                     '</div>' +
                 '<button>Send WOL Package</button>' +
             '</li>'
