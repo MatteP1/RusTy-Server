@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
         console.log(device);
         const macAddress = device.deviceMacAddress;
         const output = execSync('dir', { encoding: 'utf-8' }); // replace "dir" with etherwake command + macAddress
-        console.log('Output was:\n', output); // TODO: Add to log instead of printing in console
+        console.log('Output was:\n', output); // TODO: Add to log instead of printing in console\
         res.status(201).json({
             message: 'Device: ' + deviceName + ' was woken'
         });

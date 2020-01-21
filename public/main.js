@@ -1,14 +1,11 @@
 $.get('/api/wol', function(data, status) {
     var devices = data.devices;
-    var deviceHTMLList = [];
     $.each(devices, function(i, device) {
-        var toAppend = makeCard(device.name, device.status);
-        deviceHTMLList[i] = toAppend;
+        var toAppend = makeCard(device.deviceName, device.status);
+        $('#wol-cards').append(toAppend);
+        setupButton(device.deviceName);
     });
-    var toAdd = deviceHTMLList.join("");
-    $('#wol-cards').append(toAdd);
 });
-
 
 function makeCard(deviceName, deviceStatus) {
     return  '<li>' +
@@ -16,6 +13,17 @@ function makeCard(deviceName, deviceStatus) {
                     '<div class="status">' +
                         '<span class="circle-status"></span> ' + deviceStatus +
                     '</div>' +
-                '<button>Send WOL Package</button>' +
+                '<button id=' + deviceName + 'Button>Send WOL Package</button>' +
             '</li>'
 }
+
+function setupButton(deviceName) {
+    $("#" + deviceName + "Button").click(function(e) {
+        e.preventDefault();
+        var wolRequest = $.post('/api/wol', {"deviceName": deviceName});
+        wolRequest.done(function(data) {
+            alert(data.message); //TODO: remove alert and make another request to get status, then update status.
+        });
+    });
+}
+
